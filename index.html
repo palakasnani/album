@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5 Seconds of Summer ! Animation</title>
+    <style>
+      body {
+        background-color: black;
+        background-image: url('https://i.pinimg.com/736x/83/42/c5/8342c567adc976d959aaacc38899c5c7.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+overflow: hidden;
+      }
+
+      .rotate {
+        font-size: 5rem;
+        font-weight: bold;
+        font-family: sans-serif
+        text-transform: uppercase;
+       
+        position: relative;
+        text-align: center;
+        top: 200px;
+        animation-name: rotate;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        cursor: pointer;
+      }
+      
+      @keyframes rotate {
+        from {
+          transform: scale(1,1) rotate(0deg);
+          color: darkred;
+        }
+        to {
+          transform: scale(0.2,1) rotate(20deg);
+          color: #eeece6;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rotate">5 Seconds of Summer!</div>
+
+    <script>
+      const rotateText = document.querySelector('.rotate');
+
+      function changeColor() {
+        const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        rotateText.style.color = "#" + randomColor;
+      }
+
+      rotateText.addEventListener("animationiteration", changeColor);
+    </script>
+  </body>
+</html>
+
